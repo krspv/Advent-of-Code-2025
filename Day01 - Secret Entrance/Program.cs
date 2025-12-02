@@ -1,10 +1,10 @@
-﻿// Day 12 - Garden Groups
+﻿// Day 01 - Secret Entrance
 using Helpers;
 using System.Diagnostics;
 
 Console.OutputEncoding = System.Text.Encoding.UTF8;
 Stopwatch stopwatch = new();
-PrintHelper.ПечатиНаслов(1, "This is a title");
+PrintHelper.ПечатиНаслов(1, "Secret Entrance");
 
 string fileName = Path.Combine(Directory.GetParent(AppContext.BaseDirectory).Parent.Parent.Parent.FullName, "input.txt");
 

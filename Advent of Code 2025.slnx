@@ -1,5 +1,6 @@
 <Solution>
-  <Project Path="Day1 - Secret Entrance/Day1 - Secret Entrance.csproj" Id="1108efd1-67c9-48ab-b797-161f71ffb4a8" />
+  <Project Path="Day01 - Secret Entrance/Day01 - Secret Entrance.csproj" />
+  <Project Path="Day02 - Gift Shop/Day02 - Gift Shop.csproj" Id="d0a35752-fa54-4cfb-9f7b-15757f918dd9" />
   <Project Path="Helpers/Helpers.csproj" />
   <Project Path="Test/Test.csproj" Id="4f5aa61c-e525-4c17-a35b-7fbc1ab6cf89" />
 </Solution>
