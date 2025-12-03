@@ -28,10 +28,10 @@ bool IsInvalid(long num) {
 }
 
 long nSum = 0;
-foreach (var item in input) {
-  for (long x = item.first; x <= item.last; ++x) {
-    if (IsInvalid(x))
-      nSum += x;
+foreach (var (first, last) in input) {
+  for (long val = first; val <= last; ++val) {
+    if (IsInvalid(val))
+      nSum += val;
   }
 }
 // Part 1
@@ -66,10 +66,10 @@ bool IsInvalid2(string seq) {
 }
 
 nSum = 0;
-foreach (var item in input) {
-  for (long x = item.first; x <= item.last; ++x) {
-    if (IsInvalid2(x.ToString()))
-      nSum += x;
+foreach (var (first, last) in input) {
+  for (long val = first; val <= last; ++val) {
+    if (IsInvalid2(val.ToString()))
+      nSum += val;
   }
 }
 // Part 2
