@@ -1,4 +1,4 @@
-﻿// Day 02 - Gift Shop
+﻿// Day 03 - Lobby
 using Helpers;
 using System.Diagnostics;
 
@@ -27,11 +27,13 @@ int MaxJoltage(string bank) {
 
   return 10 * (chFirst - '0') + (chSecond - '0');
 }
+
+int nSolution01 = input.Sum(MaxJoltage);
 // Part 1
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 stopwatch.Stop();
 
-PrintHelper.ПечатиПрвДел(stopwatch.ElapsedMilliseconds, input.Sum(MaxJoltage));
+PrintHelper.ПечатиПрвДел(stopwatch.ElapsedMilliseconds, nSolution01);
 
 
 
@@ -51,11 +53,13 @@ long MaxJoltage2(string bank) {
 
   return nJoltage;
 }
+
+long nSolution02 = input.Sum(MaxJoltage2);
 // Part 2
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 stopwatch.Stop();
 
-PrintHelper.ПечатиВторДел(stopwatch.ElapsedMilliseconds, input.Sum(MaxJoltage2));
+PrintHelper.ПечатиВторДел(stopwatch.ElapsedMilliseconds, nSolution02);
 
 
 

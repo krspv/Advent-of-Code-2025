@@ -2,6 +2,7 @@
   <Project Path="Day01 - Secret Entrance/Day01 - Secret Entrance.csproj" />
   <Project Path="Day02 - Gift Shop/Day02 - Gift Shop.csproj" Id="d0a35752-fa54-4cfb-9f7b-15757f918dd9" />
   <Project Path="Day03 - Lobby/Day03 - Lobby.csproj" Id="bb3b02d2-64c6-4eda-9eda-254e48b946e8" />
+  <Project Path="Day04 - Printing Department/Day04 - Printing Department.csproj" Id="a701cdaf-542a-46f7-a933-3cc0955e8035" />
   <Project Path="Helpers/Helpers.csproj" />
   <Project Path="Test/Test.csproj" Id="4f5aa61c-e525-4c17-a35b-7fbc1ab6cf89" />
 </Solution>
