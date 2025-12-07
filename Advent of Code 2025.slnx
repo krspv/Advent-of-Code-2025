@@ -5,6 +5,7 @@
   <Project Path="Day04 - Printing Department/Day04 - Printing Department.csproj" Id="a701cdaf-542a-46f7-a933-3cc0955e8035" />
   <Project Path="Day05 - Cafeteria/Day05 - Cafeteria.csproj" Id="16874b23-59f2-497f-b8bd-d1fd83bec8bd" />
   <Project Path="Day06 - Trash Compactor/Day06 - Trash Compactor.csproj" Id="121f54dd-edbe-430d-b434-85767ffadf3d" />
+  <Project Path="Day07 - Laboratories/Day07 - Laboratories.csproj" Id="3c1cd9b5-9595-4c41-9ea8-ee1873402ed5" />
   <Project Path="Helpers/Helpers.csproj" />
   <Project Path="Test/Test.csproj" Id="4f5aa61c-e525-4c17-a35b-7fbc1ab6cf89" />
 </Solution>
