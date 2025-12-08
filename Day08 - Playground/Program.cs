@@ -3,7 +3,6 @@ using Helpers;
 using System.Diagnostics;
 
 using TJunctionBox = (long X, long Y, long Z);
-using TLink = (int idx1, int idx2, long dist);
 
 Console.OutputEncoding = System.Text.Encoding.UTF8;
 Stopwatch stopwatch = new();
@@ -20,7 +19,8 @@ List<TJunctionBox> boxes = [
   .. File.ReadAllLines(fileName)
   .Select(line => line.Split(','))
   .Select(p => (Int64.Parse(p[0]), Int64.Parse(p[1]), Int64.Parse(p[2])))
-  ];
+];
+
 
 
 
@@ -35,31 +35,31 @@ static long DistSQ(TJunctionBox box1, TJunctionBox box2) {
   return dX*dX + dY*dY + dZ*dZ;
 }
 
-Dictionary<(int, int), long> distances = [];
+PriorityQueue<(int, int), long> pq = new();
 for (int i = 0; i < boxes.Count - 1; ++i)
   for (int j = i + 1; j < boxes.Count; ++j)
-    distances[(i, j)] = DistSQ(boxes[i], boxes[j]);
-
-List<TLink> links = [.. distances.Select(item => (item.Key.Item1, item.Key.Item2, item.Value)).OrderBy(link => link.Value)];
+    pq.Enqueue((i, j), DistSQ(boxes[i], boxes[j]));
 
 HashSet<HashSet<int>> circuits = [];
+HashSet<int> connected = [];  // For Part 2
 
 for (int nNext = 0; nNext < 1000; ++nNext) {
-  TLink L = links[nNext];
-  HashSet<int> c1 = circuits.FirstOrDefault(c => c.Contains(L.idx1));
-  HashSet<int> c2 = circuits.FirstOrDefault(c => c.Contains(L.idx2));
+  var (idx1, idx2) = pq.Dequeue();
+  connected.UnionWith([idx1, idx2]);
+  HashSet<int> c1 = circuits.FirstOrDefault(c => c.Contains(idx1));
+  HashSet<int> c2 = circuits.FirstOrDefault(c => c.Contains(idx2));
 
   switch (c1, c2) {
     case (null, null):
-      circuits.Add([L.idx1, L.idx2]);
+      circuits.Add([idx1, idx2]);
       break;
 
     case (not null, null):
-      c1.Add(L.idx2);
+      c1.Add(idx2);
       break;
 
     case (null, not null):
-      c2.Add(L.idx1);
+      c2.Add(idx1);
       break;
 
     case (not null, not null) when c1 != c2:
@@ -87,23 +87,13 @@ PrintHelper.ПечатиПрвДел(stopwatch.ElapsedMilliseconds, nTop3Multipl
 stopwatch.Restart();
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Part 2
-bool[] connected = new bool[boxes.Count];
-int nCountConnected = 0;
 long nLast2Mul = 0;
+while (connected.Count < boxes.Count) {
+  var (idx1, idx2) = pq.Dequeue();
+  connected.UnionWith([idx1, idx2]);
 
-foreach (TLink L in links) {
-  if (!connected[L.idx1]) {
-    connected[L.idx1] = true;
-    nCountConnected++;
-  }
-  if (!connected[L.idx2]) {
-    connected[L.idx2] = true;
-    nCountConnected++;
-  }
-  if (nCountConnected == boxes.Count) {
-    nLast2Mul = boxes[L.idx1].X * boxes[L.idx2].X;
-    break;
-  }
+  if (connected.Count == boxes.Count)
+    nLast2Mul = boxes[idx1].X * boxes[idx2].X;
 }
 // Part 2
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
