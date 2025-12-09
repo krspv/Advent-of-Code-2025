@@ -7,6 +7,7 @@
   <Project Path="Day06 - Trash Compactor/Day06 - Trash Compactor.csproj" Id="121f54dd-edbe-430d-b434-85767ffadf3d" />
   <Project Path="Day07 - Laboratories/Day07 - Laboratories.csproj" Id="3c1cd9b5-9595-4c41-9ea8-ee1873402ed5" />
   <Project Path="Day08 - Playground/Day08 - Playground.csproj" Id="317c5603-ce53-459a-a836-d27530508475" />
+  <Project Path="Day09 - Movie Theater/Day09 - Movie Theater.csproj" Id="f658343a-6fa6-4083-b069-1388ab7fa829" />
   <Project Path="Helpers/Helpers.csproj" />
   <Project Path="Test/Test.csproj" Id="4f5aa61c-e525-4c17-a35b-7fbc1ab6cf89" />
 </Solution>
