@@ -4,7 +4,6 @@ using System.Diagnostics;
 
 using TPos = (long Row, long Col);
 using TEdge = ((long Row, long Col) First, (long Row, long Col) Second);  // Direction matters!
-// using TEdge = (long Row1, long Row2, long Col1, long Col2);
 
 Console.OutputEncoding = System.Text.Encoding.UTF8;
 Stopwatch stopwatch = new();
@@ -56,8 +55,9 @@ int nLastVertex = 1;  // input[1]
 bool bPreviousVertical = false;
 
 // Build a contour to determine all of the edges
-while (true) {
-  bool bNoMore = true;
+bool bNoMore = false;
+while (!bNoMore) {
+  bNoMore = true;
   for (int nDelta = 1; nLastVertex + nDelta < input.Count || nLastVertex - nDelta >= 0; ++nDelta) {
     int nNextRight = nLastVertex + nDelta;
     if (nNextRight < input.Count
@@ -84,8 +84,6 @@ while (true) {
     }
   }
   bPreviousVertical = !bPreviousVertical;
-  if (bNoMore)
-    break;
 }
 
 List<TEdge> verticals = [.. contour.Where(edge => edge.First.Col == edge.Second.Col).OrderBy(edge => edge.First.Col)];
