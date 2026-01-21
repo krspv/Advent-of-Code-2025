@@ -10,6 +10,7 @@
   <Project Path="Day09 - Movie Theater/Day09 - Movie Theater.csproj" Id="f658343a-6fa6-4083-b069-1388ab7fa829" />
   <Project Path="Day10 - Factory/Day10 - Factory.csproj" Id="6cd88cdb-9ce2-4e41-bb82-d7f6f2ef0cf4" />
   <Project Path="Day11 - Reactor/Day11 - Reactor.csproj" Id="c055d65a-769b-4fdd-a54a-7597f192f5d0" />
+  <Project Path="Day12 - Christmas Tree Farm/Day12 - Christmas Tree Farm.csproj" Id="8610591c-0f5e-4437-9de1-7000b8ee586a" />
   <Project Path="Helpers/Helpers.csproj" />
   <Project Path="Test/Test.csproj" Id="4f5aa61c-e525-4c17-a35b-7fbc1ab6cf89" />
 </Solution>
